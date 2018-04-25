@@ -90,7 +90,7 @@ AddCustomClass("SPARTAN", {
     name = "spartan"
 })
 
-hook.Add("TTT2_FinishedClassesSync", "TTT2ClassPackInit", function(ply, first)
+hook.Add("TTT2_FinishedClassesSync", "TTT2BombersClassPackInit", function(ply, first)
 	if CLIENT and first then -- just on client and first init !
 
 		-- setup here is not necessary but if you want to access the role data, you need to start here
@@ -100,7 +100,7 @@ hook.Add("TTT2_FinishedClassesSync", "TTT2ClassPackInit", function(ply, first)
 		LANG.AddToLanguage("English", CLASSES.HUNTER.name, "Hunter")
 		LANG.AddToLanguage("English", CLASSES.VAMPIRE.name, "Vampire")
 		LANG.AddToLanguage("English", CLASSES.TROLL.name, "Troll")
-        LANG.AddToLanguage("English", CLASSES.ATHLETE.name, "Athlete")
+		LANG.AddToLanguage("English", CLASSES.ATHLETE.name, "Athlete")
 		LANG.AddToLanguage("English", CLASSES.JUNKIE.name, "Junkie")
 		LANG.AddToLanguage("English", CLASSES.PRIEST.name, "Priest")
 		LANG.AddToLanguage("English", CLASSES.SPARTAN.name, "Spartan")
@@ -115,43 +115,41 @@ hook.Add("TTT2_FinishedClassesSync", "TTT2ClassPackInit", function(ply, first)
 		LANG.AddToLanguage("Deutsch", CLASSES.JUNKIE.name, "Junkie")
 		LANG.AddToLanguage("Deutsch", CLASSES.PRIEST.name, "Priester")
 		LANG.AddToLanguage("Deutsch", CLASSES.SPARTAN.name, "Spartan")
-    end
+	end
 end)
 
 if SERVER then
-    hook.Add("TTT2_ReceiveCustomClass", "TTT2ClassPackSetup", function(ply)
+    hook.Add("TTT2_ReceiveCustomClass", "TTT2BombersClassPackSetup", function(ply)
         if ply:Alive() and ply:HasCustomClass() then
             local cls = ply:GetCustomClass()
             
             if cls == CLASSES.AGENT.index then
                 ply:Give("weapon_ttt_adv_disguiser")
-				ply:Give("weapon_ttt_cloak")
+                ply:Give("weapon_ttt_cloak")
             elseif cls == CLASSES.ELF.index then
                 ply:Give("weapon_ttt_snowball")
                 ply:Give("weapon_ttt_gift")
             elseif cls == CLASSES.HUNTER.index then
                 ply:Give("weapon_ttt_beartrap")
-				ply:Give("ttt_m9k_harpoon")
+                ply:Give("ttt_m9k_harpoon")
             elseif cls == CLASSES.VAMPIRE.index then
                 ply:Give("weapon_ttt_vampire")
-				ply:Give("vampiredeagle")
-			elseif cls == CLASSES.TROLL.index then
+                ply:Give("vampiredeagle")
+            elseif cls == CLASSES.TROLL.index then
                 ply:Give("weapon_ttt_prop_disguiser")
-				ply:Give("weapon_ttt_minifier")
-			elseif cls == CLASSES.ATHLETE.index then
+                ply:Give("weapon_ttt_minifier")
+            elseif cls == CLASSES.ATHLETE.index then
                 ply:Give("weapon_ttt_homebat")
-				ply:Give("weapon_ttt_jarate")
-			elseif cls == CLASSES.JUNKIE.index then
+                ply:Give("weapon_ttt_jarate")
+            elseif cls == CLASSES.JUNKIE.index then
                 ply:Give("ttt_perk_doubletap")
-				ply:Give("ttt_perk_staminup")
-				ply:Give("ttt_perk_speed")
-			elseif cls == CLASSES.PRIEST.index then
+                ply:Give("ttt_perk_staminup")
+                ply:Give("ttt_perk_speed")
+            elseif cls == CLASSES.PRIEST.index then
                 ply:Give("weapon_ttt_medkit")
-				ply:Give("weapon_amaterasu")				
-			elseif cls == CLASSES.SPARTAN.index then
-				ply:Give("weapon_ttt_spartankick")
-
-            
+                ply:Give("weapon_amaterasu")				
+            elseif cls == CLASSES.SPARTAN.index then
+                ply:Give("weapon_ttt_spartankick")
             end
         end
     end)
