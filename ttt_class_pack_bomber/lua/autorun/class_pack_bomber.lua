@@ -46,49 +46,52 @@ if SERVER then
 	
 end
 
-AddCustomClass("AGENT", {
-    --color = Color(),
-    name = "agent"
-})
-AddCustomClass("ELF", {
-    --color = Color(),
-    name = "elf"
-})
+hook.Add("TTT2_PreClassesInit", "InitClassPackBomber", function()
+    AddCustomClass("AGENT", {
+        --color = Color(),
+        name = "agent"
+    })
 
-AddCustomClass("HUNTER", {
-    --color = Color(),
-    name = "hunter"
-})
+    AddCustomClass("ELF", {
+        --color = Color(),
+        name = "elf"
+    })
 
-AddCustomClass("VAMPIRE", {
-    --color = Color(),
-    name = "vampire"
-})
+    AddCustomClass("HUNTER", {
+        --color = Color(),
+        name = "hunter"
+    })
 
-AddCustomClass("TROLL", {
-    --color = Color(),
-    name = "troll"
-})
+    AddCustomClass("VAMPIRE", {
+        --color = Color(),
+        name = "vampire"
+    })
 
-AddCustomClass("ATHLETE", {
-    --color = Color(),
-    name = "athlete"
-})
+    AddCustomClass("TROLL", {
+        --color = Color(),
+        name = "troll"
+    })
 
-AddCustomClass("JUNKIE", {
-    --color = Color(),
-    name = "junkie"
-})
+    AddCustomClass("ATHLETE", {
+        --color = Color(),
+        name = "athlete"
+    })
 
-AddCustomClass("PRIEST", {
-    --color = Color(),
-    name = "priest"
-})
+    AddCustomClass("JUNKIE", {
+        --color = Color(),
+        name = "junkie"
+    })
 
-AddCustomClass("SPARTAN", {
-    --color = Color(),
-    name = "spartan"
-})
+    AddCustomClass("PRIEST", {
+        --color = Color(),
+        name = "priest"
+    })
+
+    AddCustomClass("SPARTAN", {
+        --color = Color(),
+        name = "spartan"
+    })
+end)
 
 hook.Add("TTT2_FinishedClassesSync", "TTT2BombersClassPackInit", function(ply, first)
 	if CLIENT and first then -- just on client and first init !
@@ -143,8 +146,8 @@ if SERVER then
                 ply:Give("weapon_ttt_jarate")
             elseif cls == CLASSES.JUNKIE.index then
                 ply:Give("ttt_perk_doubletap")
-                ply:Give("ttt_perk_staminup")
-                ply:Give("ttt_perk_speed")
+                timer.Simple(3.8, function() ply:Give("ttt_perk_staminup") end)
+                timer.Simple(3.8 * 2, function() ply:Give("ttt_perk_speed") end)
             elseif cls == CLASSES.PRIEST.index then
                 ply:Give("weapon_ttt_medkit")
                 ply:Give("weapon_amaterasu")				
