@@ -1,4 +1,4 @@
-if SERVER then
+﻿if SERVER then
     AddCSLuaFile()
     
     -- add other addons
@@ -44,6 +44,23 @@ if SERVER then
     -- TTT SpartanKick
     resource.AddWorkshop("282584080")
 	
+	-- TTT Random DMG
+	resource.AddWorkshop("609729626")
+	
+	-- TTT Blue Bull
+	resource.AddWorkshop("653258161")
+	
+	-- TTT A Second Chance
+	resource.AddWorkshop("672173225")
+	
+	-- TTT Random Damage
+	resource.AddWorkshop("609729626")
+	
+	-- TTT Dead Ringer
+	resource.AddWorkshop("810154456")
+	
+	-- TTT Shuriken
+	resource.AddWorkshop("922032405")
 end
 
 hook.Add("TTT2_PreClassesInit", "InitClassPackBomber", function()
@@ -91,6 +108,36 @@ hook.Add("TTT2_PreClassesInit", "InitClassPackBomber", function()
         --color = Color(),
         name = "spartan"
     })
+	
+	AddCustomClass("GAMBLER", {
+        --color = Color(),
+        name = "gambler"
+    })
+		
+	AddCustomClass("SCIENTIST", {
+        --color = Color(),
+        name = "scientist"
+    })
+		
+	AddCustomClass("SPEEDRUNNER", {
+        --color = Color(),
+        name = "speedrunner"
+    })
+	
+	AddCustomClass("MAGICIAN", {
+        --color = Color(),
+        name = "magician"
+    })
+	
+	AddCustomClass("NINJA", {
+		--color = Color(),
+		name = "ninja"
+	})
+		
+	AddCustomClass("STUNTMAN", {
+		--color = Color(),
+		name = "stuntman"
+	})
 end)
 
 hook.Add("TTT2_FinishedClassesSync", "TTT2BombersClassPackInit", function(ply, first)
@@ -107,6 +154,12 @@ hook.Add("TTT2_FinishedClassesSync", "TTT2BombersClassPackInit", function(ply, f
 		LANG.AddToLanguage("English", CLASSES.JUNKIE.name, "Junkie")
 		LANG.AddToLanguage("English", CLASSES.PRIEST.name, "Priest")
 		LANG.AddToLanguage("English", CLASSES.SPARTAN.name, "Spartan")
+		LANG.AddToLanguage("English", CLASSES.GAMBLER.name, "Gambler")
+		LANG.AddToLanguage("English", CLASSES.SCIENTIST.name, "Scientist")
+		LANG.AddToLanguage("English", CLASSES.SPEEDRUNNER.name, "Speedrunner")
+		LANG.AddToLanguage("English", CLASSES.MAGICIAN.name, "Magician")
+		LANG.AddToLanguage("English", CLASSES.NINJA.name, "Ninja")
+		LANG.AddToLanguage("English", CLASSES.STUNTMAN.name, "Stuntman")
 		
         -- just this language too
 		LANG.AddToLanguage("Deutsch", CLASSES.AGENT.name, "Agent")
@@ -118,6 +171,12 @@ hook.Add("TTT2_FinishedClassesSync", "TTT2BombersClassPackInit", function(ply, f
 		LANG.AddToLanguage("Deutsch", CLASSES.JUNKIE.name, "Junkie")
 		LANG.AddToLanguage("Deutsch", CLASSES.PRIEST.name, "Priester")
 		LANG.AddToLanguage("Deutsch", CLASSES.SPARTAN.name, "Spartan")
+		LANG.AddToLanguage("Deutsch", CLASSES.GAMBLER.name, "Gambler")
+		LANG.AddToLanguage("Deutsch", CLASSES.SCIENTIST.name, "Wissenschaftler")
+		LANG.AddToLanguage("Deutsch", CLASSES.SPEEDRUNNER.name, "Speedrunner")
+		LANG.AddToLanguage("Deutsch", CLASSES.MAGICIAN.name, "Magician")
+		LANG.AddToLanguage("Deutsch", CLASSES.NINJA.name, "Ninja")
+		LANG.AddToLanguage("Deutsch", CLASSES.STUNTMAN.name, "Stuntman")
 	end
 end)
 
@@ -127,33 +186,89 @@ if SERVER then
             local cls = ply:GetCustomClass()
             
             if cls == CLASSES.AGENT.index then
-                ply:Give("weapon_ttt_adv_disguiser")
-                ply:Give("weapon_ttt_cloak")
+                ply:GiveClassWeapon("weapon_ttt_adv_disguiser")
+                ply:GiveClassWeapon("weapon_ttt_cloak")
             elseif cls == CLASSES.ELF.index then
-                ply:Give("weapon_ttt_snowball")
-                ply:Give("weapon_ttt_gift")
+                ply:GiveClassWeapon("weapon_ttt_snowball")
+                ply:GiveClassWeapon("weapon_ttt_gift")
             elseif cls == CLASSES.HUNTER.index then
-                ply:Give("weapon_ttt_beartrap")
-                ply:Give("ttt_m9k_harpoon")
+                ply:GiveClassWeapon("weapon_ttt_beartrap")
+                ply:GiveClassWeapon("ttt_m9k_harpoon")
             elseif cls == CLASSES.VAMPIRE.index then
-                ply:Give("weapon_ttt_vampire")
-                ply:Give("vampiredeagle")
+                ply:GiveClassWeapon("weapon_ttt_vampire")
+                ply:GiveClassWeapon("vampiredeagle")
             elseif cls == CLASSES.TROLL.index then
-                ply:Give("weapon_ttt_prop_disguiser")
-                ply:Give("weapon_ttt_minifier")
+                ply:GiveClassWeapon("weapon_ttt_prop_disguiser")
+                ply:GiveClassWeapon("weapon_ttt_minifier")
             elseif cls == CLASSES.ATHLETE.index then
-                ply:Give("weapon_ttt_homebat")
-                ply:Give("weapon_ttt_jarate")
+                ply:GiveClassWeapon("weapon_ttt_homebat")
+                ply:GiveClassWeapon("weapon_ttt_jarate")
             elseif cls == CLASSES.JUNKIE.index then
-                ply:Give("ttt_perk_doubletap")
-                timer.Simple(3.8, function() ply:Give("ttt_perk_staminup") end)
-                timer.Simple(3.8 * 2, function() ply:Give("ttt_perk_speed") end)
+				ply:AddClassEquipmentItem(EQUIP_SPEED)
+				ply:AddClassEquipmentItem(EQUIP_STAMINUP)
+				ply:AddClassEquipmentItem(EQUIP_DOUBLETAP)
             elseif cls == CLASSES.PRIEST.index then
-                ply:Give("weapon_ttt_medkit")
-                ply:Give("weapon_amaterasu")				
+                ply:GiveClassWeapon("weapon_ttt_medkit")
+                ply:GiveClassWeapon("weapon_amaterasu")				
             elseif cls == CLASSES.SPARTAN.index then
-                ply:Give("weapon_ttt_spartankick")
+                ply:GiveClassWeapon("weapon_ttt_spartankick")
+			elseif cls == CLASSES.GAMBLER.index then
+                ply:AddClassEquipmentItem(EQUIP_ASC)
+				ply:GiveClassWeapon("random_damage")
+			elseif cls == CLASSES.SCIENTIST.index then
+                ply:GiveClassWeapon("weapon_ttt_wtester")
+				ply:GiveClassWeapon("weapon_ttt_push")
+			elseif cls == CLASSES.SPEEDRUNNER.index then
+				ply:AddClassEquipmentItem(EQUIP_BLUE_BULL)
+			elseif cls == CLASSES.MAGICIAN.index then
+                ply:GiveClassWeapon("weapon_ttt_dead_ringer")
+				ply:GiveClassWeapon("weapon_ttt_teleport")
+			elseif cls == CLASSES.NINJA.index then 
+				ply:GiveClassWeapon("weapon_ttt_shurikens")
+				ply:AddClassEquipmentItem(EQUIP_SILENTSTEP)
             end
         end
     end)
+	
+	hook.Add("ScalePlayerDamage", "BombersClassPackDmgScale", function(ply, hitgroup, dmginfo)
+        if ply:IsActive() and ply:HasCustomClass() then
+            local cls = ply:GetCustomClass()
+        
+            if cls == CLASSES.STUNTMAN.index then
+                if dmginfo:IsFallDamage() 
+                or dmginfo:IsDamageType(DMG_CRUSH) 
+                or dmginfo:IsExplosionDamage() then
+                    dmginfo:ScaleDamage(0)
+                end
+            elseif cls == CLASSES.SPEEDRUNNER.index then
+                if dmginfo:IsFallDamage() 
+                or dmginfo:IsDamageType(DMG_CRUSH) then
+                    dmginfo:ScaleDamage(0)
+                end
+            end
+        end
+    end)
+
+    hook.Add("EntityTakeDamage", "BombersClassPackGivesDmg", function(target, dmginfo)
+        local ply = target
+        
+        if not ply or not IsValid(ply) or not ply:IsPlayer() then return end
+    
+        if ply:IsActive() and ply:HasCustomClass() and ply:GetCustomClass() == CLASSES.STUNTMAN.index then
+            if dmginfo:IsExplosionDamage() or dmginfo:IsDamageType(DMG_BURN) then -- check its burn or explosion.
+                dmginfo:ScaleDamage(0) -- no damages
+            end
+        end
+    end)
+
+    hook.Add("OnPlayerHitGround", "BombersClassPackHitGround", function(ply, in_water, on_floater, speed)
+        if ply:IsActive() and ply:HasCustomClass() then
+            local cls = ply:GetCustomClass()
+        
+            if cls == CLASSES.STUNTMAN.index 
+            or cls == CLASSES.SPEEDRUNNER.index then
+                return false
+            end
+        end
+	end)
 end
