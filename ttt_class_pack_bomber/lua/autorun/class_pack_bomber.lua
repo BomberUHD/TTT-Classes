@@ -1,5 +1,11 @@
-﻿if SERVER then
+if SERVER then
     AddCSLuaFile()
+    
+    ---------------------------------
+    --
+    --    Add FastDL for Clients
+    --
+    ---------------------------------
     
     -- add other addons
     -- TTT Advanced Disguiser
@@ -61,176 +67,168 @@
 	
 	-- TTT Shuriken
 	resource.AddWorkshop("922032405")
-end
+    
+--------
+-- hooks
+--------
 
-hook.Add("TTT2_PreClassesInit", "InitClassPackBomber", function()
-    AddCustomClass("AGENT", {
-        --color = Color(),
-        name = "agent"
-    })
+    ---------------------------------
+    --
+    --      Initialize Classes
+    --
+    ---------------------------------
 
-    AddCustomClass("ELF", {
-        --color = Color(),
-        name = "elf"
-    })
+    hook.Add("TTTCPreClassesInit", "InitClassPackBomber", function()
+        AddCustomClass("AGENT", {
+            --color = Color(),
+            name = "agent",
+            weapons = {
+                "weapon_ttt_adv_disguiser",
+                "weapon_ttt_cloak"
+            }
+        })
 
-    AddCustomClass("HUNTER", {
-        --color = Color(),
-        name = "hunter"
-    })
+        AddCustomClass("ELF", {
+            --color = Color(),
+            name = "elf",
+            weapons = {
+                "weapon_ttt_snowball",
+                "weapon_ttt_gift"
+            }
+        })
 
-    AddCustomClass("VAMPIRE", {
-        --color = Color(),
-        name = "vampire"
-    })
+        AddCustomClass("HUNTER", {
+            --color = Color(),
+            name = "hunter",
+            weapons = {
+                "weapon_ttt_beartrap",
+                "ttt_m9k_harpoon"
+            }
+        })
 
-    AddCustomClass("TROLL", {
-        --color = Color(),
-        name = "troll"
-    })
+        AddCustomClass("VAMPIRE", {
+            --color = Color(),
+            name = "vampire",
+            weapons = {
+                "weapon_ttt_vampire",
+                "vampiredeagle"
+            }
+        })
 
-    AddCustomClass("ATHLETE", {
-        --color = Color(),
-        name = "athlete"
-    })
+        AddCustomClass("TROLL", {
+            --color = Color(),
+            name = "troll",
+            weapons = {
+                "weapon_ttt_prop_disguiser",
+                "weapon_ttt_minifier"
+            }
+        })
 
-    AddCustomClass("JUNKIE", {
-        --color = Color(),
-        name = "junkie"
-    })
+        AddCustomClass("ATHLETE", {
+            --color = Color(),
+            name = "athlete",
+            weapons = {
+                "weapon_ttt_homebat",
+                "weapon_ttt_jarate"
+            }
+        })
 
-    AddCustomClass("PRIEST", {
-        --color = Color(),
-        name = "priest"
-    })
+        AddCustomClass("JUNKIE", {
+            --color = Color(),
+            name = "junkie",
+            items = {
+                EQUIP_SPEED,
+                EQUIP_STAMINUP,
+                EQUIP_DOUBLETAP
+            }
+        })
 
-    AddCustomClass("SPARTAN", {
-        --color = Color(),
-        name = "spartan"
-    })
-	
-	AddCustomClass("GAMBLER", {
-        --color = Color(),
-        name = "gambler"
-    })
-		
-	AddCustomClass("SCIENTIST", {
-        --color = Color(),
-        name = "scientist"
-    })
-		
-	AddCustomClass("SPEEDRUNNER", {
-        --color = Color(),
-        name = "speedrunner"
-    })
-	
-	AddCustomClass("MAGICIAN", {
-        --color = Color(),
-        name = "magician"
-    })
-	
-	AddCustomClass("NINJA", {
-		--color = Color(),
-		name = "ninja"
-	})
-		
-	AddCustomClass("STUNTMAN", {
-		--color = Color(),
-		name = "stuntman"
-	})
-end)
+        AddCustomClass("PRIEST", {
+            --color = Color(),
+            name = "priest",
+            weapons = {
+                "weapon_ttt_medkit",
+                "weapon_amaterasu"
+            }
+        })
 
-hook.Add("TTT2_FinishedClassesSync", "TTT2BombersClassPackInit", function(ply, first)
-	if CLIENT and first then -- just on client and first init !
-
-		-- setup here is not necessary but if you want to access the role data, you need to start here
-		-- setup basic translation !
-		LANG.AddToLanguage("English", CLASSES.AGENT.name, "Agent")
-		LANG.AddToLanguage("English", CLASSES.ELF.name, "Elf")
-		LANG.AddToLanguage("English", CLASSES.HUNTER.name, "Hunter")
-		LANG.AddToLanguage("English", CLASSES.VAMPIRE.name, "Vampire")
-		LANG.AddToLanguage("English", CLASSES.TROLL.name, "Troll")
-		LANG.AddToLanguage("English", CLASSES.ATHLETE.name, "Athlete")
-		LANG.AddToLanguage("English", CLASSES.JUNKIE.name, "Junkie")
-		LANG.AddToLanguage("English", CLASSES.PRIEST.name, "Priest")
-		LANG.AddToLanguage("English", CLASSES.SPARTAN.name, "Spartan")
-		LANG.AddToLanguage("English", CLASSES.GAMBLER.name, "Gambler")
-		LANG.AddToLanguage("English", CLASSES.SCIENTIST.name, "Scientist")
-		LANG.AddToLanguage("English", CLASSES.SPEEDRUNNER.name, "Speedrunner")
-		LANG.AddToLanguage("English", CLASSES.MAGICIAN.name, "Magician")
-		LANG.AddToLanguage("English", CLASSES.NINJA.name, "Ninja")
-		LANG.AddToLanguage("English", CLASSES.STUNTMAN.name, "Stuntman")
-		
-        -- just this language too
-		LANG.AddToLanguage("Deutsch", CLASSES.AGENT.name, "Agent")
-		LANG.AddToLanguage("Deutsch", CLASSES.ELF.name, "Elf")
-		LANG.AddToLanguage("Deutsch", CLASSES.HUNTER.name, "Jäger")
-		LANG.AddToLanguage("Deutsch", CLASSES.VAMPIRE.name, "Vampir")
-		LANG.AddToLanguage("Deutsch", CLASSES.TROLL.name, "Troll")
-		LANG.AddToLanguage("Deutsch", CLASSES.ATHLETE.name, "Sportler")
-		LANG.AddToLanguage("Deutsch", CLASSES.JUNKIE.name, "Junkie")
-		LANG.AddToLanguage("Deutsch", CLASSES.PRIEST.name, "Priester")
-		LANG.AddToLanguage("Deutsch", CLASSES.SPARTAN.name, "Spartan")
-		LANG.AddToLanguage("Deutsch", CLASSES.GAMBLER.name, "Gambler")
-		LANG.AddToLanguage("Deutsch", CLASSES.SCIENTIST.name, "Wissenschaftler")
-		LANG.AddToLanguage("Deutsch", CLASSES.SPEEDRUNNER.name, "Speedrunner")
-		LANG.AddToLanguage("Deutsch", CLASSES.MAGICIAN.name, "Magician")
-		LANG.AddToLanguage("Deutsch", CLASSES.NINJA.name, "Ninja")
-		LANG.AddToLanguage("Deutsch", CLASSES.STUNTMAN.name, "Stuntman")
-	end
-end)
-
-if SERVER then
-    hook.Add("TTT2_ReceiveCustomClass", "TTT2BombersClassPackSetup", function(ply)
-        if ply:Alive() and ply:HasCustomClass() then
-            local cls = ply:GetCustomClass()
+        AddCustomClass("SPARTAN", {
+            --color = Color(),
+            name = "spartan",
+            weapons = {
+                "weapon_ttt_spartankick"
+            }
+        })
+        
+        AddCustomClass("GAMBLER", {
+            --color = Color(),
+            name = "gambler",
+            weapons = {
+                "random_damage"
+            },
+            items = {
+                EQUIP_ASC
+            }
+        })
             
-            if cls == CLASSES.AGENT.index then
-                ply:GiveClassWeapon("weapon_ttt_adv_disguiser")
-                ply:GiveClassWeapon("weapon_ttt_cloak")
-            elseif cls == CLASSES.ELF.index then
-                ply:GiveClassWeapon("weapon_ttt_snowball")
-                ply:GiveClassWeapon("weapon_ttt_gift")
-            elseif cls == CLASSES.HUNTER.index then
-                ply:GiveClassWeapon("weapon_ttt_beartrap")
-                ply:GiveClassWeapon("ttt_m9k_harpoon")
-            elseif cls == CLASSES.VAMPIRE.index then
-                ply:GiveClassWeapon("weapon_ttt_vampire")
-                ply:GiveClassWeapon("vampiredeagle")
-            elseif cls == CLASSES.TROLL.index then
-                ply:GiveClassWeapon("weapon_ttt_prop_disguiser")
-                ply:GiveClassWeapon("weapon_ttt_minifier")
-            elseif cls == CLASSES.ATHLETE.index then
-                ply:GiveClassWeapon("weapon_ttt_homebat")
-                ply:GiveClassWeapon("weapon_ttt_jarate")
-            elseif cls == CLASSES.JUNKIE.index then
-				ply:AddClassEquipmentItem(EQUIP_SPEED)
-				ply:AddClassEquipmentItem(EQUIP_STAMINUP)
-				ply:AddClassEquipmentItem(EQUIP_DOUBLETAP)
-            elseif cls == CLASSES.PRIEST.index then
-                ply:GiveClassWeapon("weapon_ttt_medkit")
-                ply:GiveClassWeapon("weapon_amaterasu")				
-            elseif cls == CLASSES.SPARTAN.index then
-                ply:GiveClassWeapon("weapon_ttt_spartankick")
-			elseif cls == CLASSES.GAMBLER.index then
-                ply:AddClassEquipmentItem(EQUIP_ASC)
-				ply:GiveClassWeapon("random_damage")
-			elseif cls == CLASSES.SCIENTIST.index then
-                ply:GiveClassWeapon("weapon_ttt_wtester")
-				ply:GiveClassWeapon("weapon_ttt_push")
-			elseif cls == CLASSES.SPEEDRUNNER.index then
-				ply:AddClassEquipmentItem(EQUIP_BLUE_BULL)
-			elseif cls == CLASSES.MAGICIAN.index then
-                ply:GiveClassWeapon("weapon_ttt_dead_ringer")
-				ply:GiveClassWeapon("weapon_ttt_teleport")
-			elseif cls == CLASSES.NINJA.index then 
-				ply:GiveClassWeapon("weapon_ttt_shurikens")
-				ply:AddClassEquipmentItem(EQUIP_SILENTSTEP)
-            end
-        end
+        AddCustomClass("SCIENTIST", {
+            --color = Color(),
+            name = "scientist",
+            weapons = {
+                "weapon_ttt_wtester",
+                "weapon_ttt_push"
+            }
+        })
+            
+        AddCustomClass("SPEEDRUNNER", {
+            --color = Color(),
+            name = "speedrunner",
+            items = {
+                EQUIP_BLUE_BULL
+            }
+        })
+        
+        AddCustomClass("MAGICIAN", {
+            --color = Color(),
+            name = "magician",
+            weapons = {
+                "weapon_ttt_dead_ringer",
+                "weapon_ttt_teleport"
+            }
+        })
+        
+        AddCustomClass("NINJA", {
+            --color = Color(),
+            name = "ninja",
+            weapons = {
+                "weapon_ttt_shurikens"
+            },
+            items = {
+                EQUIP_SILENTSTEP
+            }
+        })
+            
+        AddCustomClass("STUNTMAN", {
+            --color = Color(),
+            name = "stuntman"
+        })
+		
+		AddCustomClass("VISIONARY", {
+            --color = Color(),
+            name = "visionary",
+			items = {EQUIP_RADAR,
+					 EQUIP_SM
+		}
+        })
     end)
-	
-	hook.Add("ScalePlayerDamage", "BombersClassPackDmgScale", function(ply, hitgroup, dmginfo)
+    
+    ---------------------------------
+    --
+    --         Custom Hooks
+    --
+    ---------------------------------
+    
+    hook.Add("ScalePlayerDamage", "BombersClassPackDmgScale", function(ply, hitgroup, dmginfo)
         if ply:IsActive() and ply:HasCustomClass() then
             local cls = ply:GetCustomClass()
         
@@ -249,7 +247,7 @@ if SERVER then
         end
     end)
 
-    hook.Add("EntityTakeDamage", "BombersClassPackGivesDmg", function(target, dmginfo)
+    hook.Add("EntityTakeDamage", "BombersClassPackAddClassEquipmentWeaponFixsDmg", function(target, dmginfo)
         local ply = target
         
         if not ply or not IsValid(ply) or not ply:IsPlayer() then return end
@@ -271,4 +269,51 @@ if SERVER then
             end
         end
 	end)
+else
+
+--------
+-- hooks
+--------
+
+    hook.Add("TTT2_FinishedClassesSync", "TTT2BombersClassPackInit", function(ply, first)
+        if first then -- just on client and first init !
+
+            -- setup here is not necessary but if you want to access the role data, you need to start here
+            -- setup basic translation !
+            LANG.AddToLanguage("English", CLASSES.AGENT.name, "Agent")
+            LANG.AddToLanguage("English", CLASSES.ELF.name, "Elf")
+            LANG.AddToLanguage("English", CLASSES.HUNTER.name, "Hunter")
+            LANG.AddToLanguage("English", CLASSES.VAMPIRE.name, "Vampire")
+            LANG.AddToLanguage("English", CLASSES.TROLL.name, "Troll")
+            LANG.AddToLanguage("English", CLASSES.ATHLETE.name, "Athlete")
+            LANG.AddToLanguage("English", CLASSES.JUNKIE.name, "Junkie")
+            LANG.AddToLanguage("English", CLASSES.PRIEST.name, "Priest")
+            LANG.AddToLanguage("English", CLASSES.SPARTAN.name, "Spartan")
+            LANG.AddToLanguage("English", CLASSES.GAMBLER.name, "Gambler")
+            LANG.AddToLanguage("English", CLASSES.SCIENTIST.name, "Scientist")
+            LANG.AddToLanguage("English", CLASSES.SPEEDRUNNER.name, "Speedrunner")
+            LANG.AddToLanguage("English", CLASSES.MAGICIAN.name, "Magician")
+            LANG.AddToLanguage("English", CLASSES.NINJA.name, "Ninja")
+            LANG.AddToLanguage("English", CLASSES.STUNTMAN.name, "Stuntman")
+			LANG.AddToLanguage("English", CLASSES.VISIONARY.name, "Visionary")
+            
+            -- just this language too
+            LANG.AddToLanguage("Deutsch", CLASSES.AGENT.name, "Agent")
+            LANG.AddToLanguage("Deutsch", CLASSES.ELF.name, "Elf")
+            LANG.AddToLanguage("Deutsch", CLASSES.HUNTER.name, "Jäger")
+            LANG.AddToLanguage("Deutsch", CLASSES.VAMPIRE.name, "Vampir")
+            LANG.AddToLanguage("Deutsch", CLASSES.TROLL.name, "Troll")
+            LANG.AddToLanguage("Deutsch", CLASSES.ATHLETE.name, "Sportler")
+            LANG.AddToLanguage("Deutsch", CLASSES.JUNKIE.name, "Junkie")
+            LANG.AddToLanguage("Deutsch", CLASSES.PRIEST.name, "Priester")
+            LANG.AddToLanguage("Deutsch", CLASSES.SPARTAN.name, "Spartan")
+            LANG.AddToLanguage("Deutsch", CLASSES.GAMBLER.name, "Gambler")
+            LANG.AddToLanguage("Deutsch", CLASSES.SCIENTIST.name, "Wissenschaftler")
+            LANG.AddToLanguage("Deutsch", CLASSES.SPEEDRUNNER.name, "Speedrunner")
+            LANG.AddToLanguage("Deutsch", CLASSES.MAGICIAN.name, "Magician")
+            LANG.AddToLanguage("Deutsch", CLASSES.NINJA.name, "Ninja")
+            LANG.AddToLanguage("Deutsch", CLASSES.STUNTMAN.name, "Stuntman")
+			LANG.AddToLanguage("Deutsch", CLASSES.VISIONARY.name, "Seher")
+        end
+    end)
 end
