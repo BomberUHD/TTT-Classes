@@ -136,10 +136,10 @@ if SERVER then
         AddCustomClass("JUNKIE", {
             --color = Color(),
             name = "junkie",
-            items = {
-                EQUIP_SPEED,
-                EQUIP_STAMINUP,
-                EQUIP_DOUBLETAP
+            weapons = {
+                "weapon_ttt_speed",
+                "weapon_ttt_staminup",
+                "weapon_ttt_doubletap"
             }
         })
 
@@ -212,14 +212,6 @@ if SERVER then
             --color = Color(),
             name = "stuntman"
         })
-		
-		AddCustomClass("VISIONARY", {
-            --color = Color(),
-            name = "visionary",
-			items = {EQUIP_RADAR,
-					 EQUIP_SM
-		}
-        })
     end)
     
     ---------------------------------
@@ -275,7 +267,7 @@ else
 -- hooks
 --------
 
-    hook.Add("TTT2_FinishedClassesSync", "TTT2BombersClassPackInit", function(ply, first)
+    hook.Add("TTTCFinishedClassesSync", "TTTCBombersClassPackInit", function(ply, first)
         if first then -- just on client and first init !
 
             -- setup here is not necessary but if you want to access the role data, you need to start here
@@ -295,7 +287,6 @@ else
             LANG.AddToLanguage("English", CLASSES.MAGICIAN.name, "Magician")
             LANG.AddToLanguage("English", CLASSES.NINJA.name, "Ninja")
             LANG.AddToLanguage("English", CLASSES.STUNTMAN.name, "Stuntman")
-			LANG.AddToLanguage("English", CLASSES.VISIONARY.name, "Visionary")
             
             -- just this language too
             LANG.AddToLanguage("Deutsch", CLASSES.AGENT.name, "Agent")
@@ -313,7 +304,6 @@ else
             LANG.AddToLanguage("Deutsch", CLASSES.MAGICIAN.name, "Magician")
             LANG.AddToLanguage("Deutsch", CLASSES.NINJA.name, "Ninja")
             LANG.AddToLanguage("Deutsch", CLASSES.STUNTMAN.name, "Stuntman")
-			LANG.AddToLanguage("Deutsch", CLASSES.VISIONARY.name, "Seher")
         end
     end)
 end
