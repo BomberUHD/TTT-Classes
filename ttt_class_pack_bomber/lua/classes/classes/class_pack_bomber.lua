@@ -5,7 +5,7 @@ end
 CLASS.AddClass("AGENT", {
 	color = Color(31, 31, 31, 255),
 	passiveWeapons = {
-        "weapon_ttt_adv_disguiser",
+        "weapon_ttt_identity_disguiser",
         "weapon_ttt_cloak"
     },
     passive = true,
