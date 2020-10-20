@@ -4,9 +4,13 @@
 --
 ---------------------------------
 
+-- Main Collection
+-- TTTC Fate Classes Items
+resource.AddWorkshop("1384447444")
+
 -- add other addons
--- TTT Advanced Disguiser
-resource.AddWorkshop("606792331")
+-- [TTT2] Identity Disguiser [WEAPON]
+resource.AddWorkshop("2144375749")
 
 -- [Gamemode: TTT] Traitor Harpoon
 resource.AddWorkshop("456189236")
