@@ -12,7 +12,7 @@ CLASS.AddClass("AGENT", {
 			Deutsch = "Agent"
 		},
 		desc = {
-			English = "The Agent is equipped with a Cloaking Device and an Advanced Disguiser to hide his identity.",
+			English = "The Agent is equipped with a Cloaking Device and an Advanced Disguiser to hide their identity.",
 			Deutsch = "Der Agent ist mit dem Cloaking Device und dem Advanced Disguiser ausgestattet, um seine Identität zu verbergen."
 		}
 	}
@@ -72,7 +72,7 @@ CLASS.AddClass("VAMPIRE", {
 			Deutsch = "Vampir"
 		},
 		desc = {
-			English = "The Vampire is hungry for blood and can eat corpses for HP with his Cannibalism. He is also able to run faster.",
+			English = "The Vampire is hungry for blood and can eat corpses for HP with his Cannibalism. They are also able to run faster.",
 			Deutsch = "Der Vampir ist in der Lage Leichen zu fressen, um HP wiederzuerlangen. Außerdem ist er schneller als gewöhnlich."
 		}
 	}
@@ -92,7 +92,7 @@ CLASS.AddClass("TROLL", {
 			Deutsch = "Troll"
 		},
 		desc = {
-			English = "The Troll can turn itself into a prop and alters his size with the Minifier.",
+			English = "The Troll can turn itself into a prop and alter their size with the Minifier.",
 			Deutsch = "Der Troll kann seine Größe mit dem Minifier modifizieren und ist in der Lage, sich in Gegenstände zu verwandeln."
 		}
 	}
@@ -112,7 +112,7 @@ CLASS.AddClass("ATHLETE", {
 			Deutsch = "Athlet"
 		},
 		desc = {
-			English = "The Athlete is a master of baseball. He always carries his baseball bat with him and in case of a drug test a jar of clean piss too.",
+			English = "The Athlete is a master of baseball. They always carry their baseball bat with them and in case of a drug test a jar of clean piss too.",
 			Deutsch = "Der Sportler ist ein Meister des Baseballs. Er hat immer seinen Schläger bei sich und für den Fall eines Drogentests außerdem ein Glas voll frischer Pisse."
 		}
 	}
@@ -133,7 +133,7 @@ CLASS.AddClass("JUNKIE", {
 			Deutsch = "Junkie"
 		},
 		desc = {
-			English = "The Junkie is always on drugs. They give him the ability to run, reload and shoot faster.",
+			English = "The Junkie is always on drugs. They give them the ability to run, reload and shoot faster.",
 			Deutsch = "Der Junkie ist immer voll auf Drogen. Diese lassen ihn schneller rennen, nachladen und schießen."
 		}
 	}
@@ -153,7 +153,7 @@ CLASS.AddClass("PRIEST", {
 			Deutsch = "Priester"
 		},
 		desc = {
-			English = "The Priest is able to heal his allies with a Medkit, but for his enemies he only have the cleansing fire, Amaterasu",
+			English = "The Priest is able to heal his allies with a Medkit, but for their enemies they only have the cleansing fire, the Amaterasu.",
 			Deutsch = "Der Priester kann seine Verbündeten mit einem Medkit heilen, seinen Feinden schickt er aber mit Amaterasu das heilige Feuer."
 		}
 	}
@@ -175,7 +175,7 @@ CLASS.AddClass("SPARTAN", {
 			Deutsch = "Spartiat"
 		},
 		desc = {
-			English = "The Spartan is well armored and can bring his enemies to death with the well-known Spartan Kick.",
+			English = "The Spartan is well armored and can bring their enemies to death with the well-known Spartan Kick.",
 			Deutsch = "Der Spartiat is gut gepanzert und erledigt seine Feinde mit dem berühmten spartanischen Tritt."
 		}
 	}
@@ -197,7 +197,7 @@ CLASS.AddClass("GAMBLER", {
 			Deutsch = "Spieler"
 		},
 		desc = {
-			English = "The Gambler is always gambling - with weapons (Random Damage) and with his life, so he might come back with A Second Chance",
+			English = "The Gambler is always gambling - with weapons (Random Damage) and with their life, so they might come back with A Second Chance.",
 			Deutsch = "Der Spieler ist immer am Spielen - sowohl mit Waffen (Random Damage) als auch mit seinem Leben, er könnte also durch A Second Chance zurückkommen."
 		}
 	}
@@ -217,7 +217,7 @@ CLASS.AddClass("SCIENTIST", {
 			Deutsch = "Wissenschaftler"
 		},
 		desc = {
-			English = "The Scientist is highly interested in DNA and gravity, so he carries a DNA Tester and a Newton Launcher with him.",
+			English = "The Scientist is highly interested in DNA and gravity, so they carry a DNA Scanner and a Newton Launcher with them.",
 			Deutsch = "Der Wissenschaftler forscht an DNA und Schwerkraft, also trägt er immer einen DNA Scanner und einen Newton Launcher bei sich."
 		}
 	}
@@ -237,7 +237,7 @@ CLASS.AddClass("FREERUNNER", {
 			Deutsch = "Freerunner"
 		},
 		desc = {
-			English = "The Freerunner is addicted to parcours. He manages triple jumps with Blue Bull and doesn't take any fall damage.",
+			English = "The Freerunner is addicted to parcours. They manage triple jumps with Blue Bull and don't take any fall damage.",
 			Deutsch = "Der Freerunner ist süchtig nach Sprüngen. Er kann 3x hintereinander durch Blue Bull springen und bekommt keinen Fallschaden."
 		}
 	}
@@ -246,7 +246,7 @@ CLASS.AddClass("FREERUNNER", {
 CLASS.AddClass("MAGICIAN", {
 	color = Color(223, 85, 239, 255),
 	passiveWeapons = {
-		"weapon_ttt_dead_ringer",
+		"weapon_ttt_deadringer",
 		"weapon_ttt_teleport"
 	},
 	passive = true,
@@ -257,7 +257,7 @@ CLASS.AddClass("MAGICIAN", {
 			Deutsch = "Magier"
 		},
 		desc = {
-			English = "The Magician is able to switch places with a Teleporter and disappears when he takes damage, thanks to the Dead Ringer.",
+			English = "The Magician is able to switch places with a Teleporter and disappears when they takes damage, thanks to the Dead Ringer.",
 			Deutsch = "Der Magier kann mit dem Teleporter seine Position verändern und verschwindet dank dem Dead Ringer, sobald er Schaden bekommt."
 		}
 	}
@@ -279,7 +279,7 @@ CLASS.AddClass("NINJA", {
 			Deutsch = "Ninja"
 		},
 		desc = {
-			English = "The Ninja was trained to step without making any sound. His favourite weapons are Shurikens.",
+			English = "The Ninja was trained to step without making any sound. Their favourite weapons are Shurikens.",
 			Deutsch = "Der Ninja ist durch jahrelanges Training in der Lage lautlos zu laufen. Am besten tötet er mit seinen Shurikens."
 		}
 	}
@@ -300,7 +300,7 @@ CLASS.AddClass("STUNTMAN", {
 			Deutsch = "Stuntman"
 		},
 		desc = {
-			English = "The Stuntman is a master of his body and doesn't take damage from fire, explosions and falling.",
+			English = "The Stuntman is a master of their body and doesn't take damage from fire, explosions and falling.",
 			Deutsch = "Der Stuntman ist durch seinen Job geübt und bekommt keinen Schaden durch Feuer, Explosionen oder Höhe."
 		}
 	}
@@ -320,7 +320,7 @@ CLASS.AddClass("FRAUD", {
 			Deutsch = "Betrüger"
 		},
 		desc = {
-			English = "The Fraud can fake his own death and is able to cause much confusion with his Flashbang.",
+			English = "The Fraud can fake their own death and is able to cause confusion with their flashbang.",
 			Deutsch = "Der Betrüger kann seinen Tot vortäuschen oder durch seine Flashbang Verwirrung stiften und verschwinden."
 		}
 	}
@@ -329,7 +329,7 @@ CLASS.AddClass("FRAUD", {
 CLASS.AddClass("HACKER", {
 	color = Color(0, 255, 255, 255),
 	passiveItems = {
-		"item_ttt_slowmotion",
+		"item_ttt_sm",
 		"item_ttt_thelittlehelper"
 	},
 	passive = true,
@@ -340,7 +340,7 @@ CLASS.AddClass("HACKER", {
 			Deutsch = "Hacker"
 		},
 		desc = {
-			English = "The Hacker can manipulate the whole game. He can make himself invincable with The Little Helper and manipulates the time with Slowmotion",
+			English = "The Hacker can manipulate the whole game. They can make themself invincable with The Little Helper and manipulate the time with Slowmotion.",
 			Deutsch = "Der Hacker kann das gesamte Spiel manipulieren. Er kann sich durch The Little Helper unverwundbar machen und über Slowmotion die Zeit verändern."
 		}
 	}
@@ -380,7 +380,7 @@ CLASS.AddClass("VISIONARY", {
 			Deutsch = "Seher"
 		},
 		desc = {
-			English = "The Visionary always know where everyone is and can slow down the time to concentrate on his work.",
+			English = "The Visionary always know where everyone is and can slow down the time to concentrate on their work.",
 			Deutsch = "Der Seher weiß durch sein Radar immer, wo sich jeder befindet und kann über Slowmotion die Zeit verlangsamen."
 		}
 	}
@@ -392,7 +392,7 @@ CLASS.AddClass("BOUNTYHUNTER", {
 		"item_ttt_radar"
 	},
 	passiveWeapons = {
-		"weapon_ttt_goldendeagle"
+		"weapon_ttt_powerdeagle"
 	},
 	passive = true,
 	deactivated = true,
@@ -402,7 +402,7 @@ CLASS.AddClass("BOUNTYHUNTER", {
 			Deutsch = "Kopfgeldjäger"
 		},
 		desc = {
-			English = "The Bountyhunter carries the powerful weapon Golden Deagle with him and always know where everyone is, thanks to his Radar.",
+			English = "The Bountyhunter carries the powerful Golden Deagle with them and always knows where everyone is, thanks to their Radar.",
 			Deutsch = "Der Kopfgeldjäger weiß immer, wo sich jeder befindet und ist im Besitz einer mächtigen Waffe, der goldenen Deagle."
 		}
 	}
